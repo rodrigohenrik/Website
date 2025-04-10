@@ -1,29 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rodrigo Henrik | My Personal Website</title>
+
   <!-- Google Font: Parkinsans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- AOS for scroll animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img id="profile-pic" src="" alt="Rodrigo Henrik">
-      <h1 id="username"></h1>
-      <p id="bio"></p>
-    </header>
-    <section id="repos">
-      <h2>Repositories</h2>
-      <div id="repos-list"></div>
-    </section>
+  <!-- Terminal-style Loader -->
+  <div id="loader">
+    <p>Loading<span class="dots">...</span></p>
   </div>
+
+  <div class="container hidden" id="main-content">
+    <!-- Header -->
+    <header>
+      <img id="profile-pic" src="" alt="Rodrigo Henrik" />
+      <h1 id="username" class="typing"></h1>
+      <p id="bio"></p>
+
+      <div class="social">
+        <a href="https://github.com/rodrigohenrik" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/rodrigohenrik" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:youremail@example.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- About Me -->
+    <section id="about" data-aos="fade-up">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate developer focused on clean code, automation, security, and creative solutions.
+        I love building tools, contributing to open source, and exploring the intersection of design & tech.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>JavaScript / TypeScript</li>
+        <li>Node.js & Express</li>
+        <li>Python & Automation</li>
+        <li>APIs / RESTful Services</li>
+        <li>Git & CI/CD</li>
+        <li>Cybersecurity & Ethical Hacking</li>
+      </ul>
+    </section>
+
+    <!-- GitHub Repositories -->
+    <section id="repos" data-aos="fade-up">
+      <h2>Featured Repositories</h2>
+      <div id="repos-list" class="repo-container"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>You can reach me via email or connect on social media.</p>
+      <a class="btn" href="mailto:youremail@example.com">📧 Send a Message</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Rodrigo Henrik • Powered by GitHub Pages</p>
+    </footer>
+  </div>
+
   <!-- JavaScript -->
   <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

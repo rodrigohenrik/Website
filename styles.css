@@ -19,8 +19,8 @@ header {
 }
 
 #profile-pic {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border: 3px solid #FE114B;
   margin-bottom: 1rem;
@@ -36,19 +36,8 @@ p {
   margin-bottom: 1rem;
 }
 
-.social a {
-  margin: 0 0.5rem;
-  color: #FE114B;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-
-.social a:hover {
-  color: white;
-}
-
 section {
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 h2 {

@@ -14,19 +14,8 @@ body {
   text-align: center;
 }
 
-#loader {
-  background-color: #07121B;
-  color: #FE114B;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: monospace;
-}
-
 .hidden {
-  display: none;
+  display:;
 }
 
 header {

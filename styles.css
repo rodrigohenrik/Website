@@ -1,0 +1,161 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Parkinsans", sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.parkinsans-light {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.parkinsans-regular {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.parkinsans-bold {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  font-weight: 800;
+  margin: 1.5rem 0 1rem;
+  font-family: "Parkinsans", sans-serif;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Parkinsans", sans-serif;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+input {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+button {
+  background-color: #7c3aed;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.privacy {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #7c3aed55;
+}
+
+.section {
+  margin-top: 4rem;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.section:nth-of-type(1) {
+  animation-delay: 0.3s;
+}
+
+.section:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+.section:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+nav a {
+  color: #7c3aed;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

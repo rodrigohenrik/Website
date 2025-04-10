@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "Parkinsans", sans-serif;
   background-color: #000;
-  color: #fff;
+  color: #9b9c9d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +52,7 @@ h2 {
   font-weight: 800;
   margin: 1.5rem 0 1rem;
   font-family: "Parkinsans", sans-serif;
-  color: #bc0058;
+  color: #d7d7e0;
 }
 
 p {
@@ -72,12 +72,12 @@ button {
 }
 
 input {
-  background-color: #1a1a1a;
+  background-color: #202125;
   color: #fff;
 }
 
 button {
-  background-color: #7c3aed;
+  background-color: #2CC20E;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -85,7 +85,7 @@ button {
 
 .privacy {
   font-size: 0.75rem;
-  color: #aaa;
+  color: #9b9c9d;
 }
 
 .grid {
@@ -96,24 +96,24 @@ button {
 }
 
 .card {
-  background-color: #1a1a1a;
+  background-color: #202125;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
-  color: #fff;
+  color: #9b9c9d;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  background-color: #2a2a2a;
+  background-color: #1A1B1E;
   transform: scale(1.05);
-  box-shadow: 0 0 15px #7c3aed55;
+  box-shadow: 0 0 15px #1A1B1E;
 }
 
 .section {
@@ -152,7 +152,7 @@ nav {
 }
 
 nav a {
-  color: #bc0058;
+  color: #2CC20E;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: 600;

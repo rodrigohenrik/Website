@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rodrigo Henrik | My Personal Website</title>
-
-  <!-- Google Fonts: Parkinsans -->
+  <!-- Google Font: Parkinsans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
-
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Rodrigo Henrik</h1>
-      <p>Desenvolvedor apaixonado por tecnologia, inovação e código limpo.</p>
+      <img id="profile-pic" src="" alt="Foto de Rodrigo Henrik">
+      <h1 id="username"></h1>
+      <p id="bio"></p>
     </header>
-
-    <section class="projects">
-      <h2>Projetos em destaque</h2>
-
-      <div class="project-card">
-        <h3><a href="https://github.com/rodrigohenrik/nome-do-projeto" target="_blank">Nome do Projeto</a></h3>
-        <p>Descrição rápida do projeto com foco no problema que resolve.</p>
-      </div>
-
-      <div class="project-card">
-        <h3><a href="https://github.com/rodrigohenrik/outro-projeto" target="_blank">Outro Projeto</a></h3>
-        <p>Outro exemplo de um projeto útil que mostra suas habilidades.</p>
-      </div>
+    <section id="repos">
+      <h2>Repositórios</h2>
+      <div id="repos-list"></div>
     </section>
-
-    <footer>
-      <p>© 2025 Rodrigo Henrik — <a href="https://github.com/rodrigohenrik" target="_blank">GitHub</a></p>
-    </footer>
   </div>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

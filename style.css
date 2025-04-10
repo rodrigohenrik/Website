@@ -51,6 +51,7 @@ p {
   width: 100%;
   max-width: 700px;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .section {
@@ -89,6 +90,7 @@ button {
   border: none;
   border-radius: 0.5rem;
   font-family: inherit;
+  font-size: 1rem;
 }
 
 input {
@@ -145,15 +147,52 @@ nav {
   background-color: #000;
   padding: 1rem;
   z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 nav a {
   color: #2CC20E;
-  margin: 0 1rem;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem;
 }
 
 nav a:hover {
   text-decoration: underline;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
 }

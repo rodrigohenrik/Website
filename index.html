@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyb3rX | Cybersecurity Enthusiast & Ethical Hacker</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-
     <!-- Navigation -->
     <nav>
       <a href="#newsletter">Newsletter</a>
@@ -25,21 +22,26 @@
       <a href="#social">Social</a>
     </nav>
 
-    <!-- Header / Hero Section -->
+    <!-- Hero -->
     <header class="section">
-      <img src="" alt="Cyb3rX Avatar" class="avatar" />
+      <img src="avatar.png" alt="Cyb3rX Avatar" class="avatar" />
       <h1>Hey friends, it's Cyb3rX!</h1>
-      <p>
-        I’m a Cybersecurity Enthusiast & Ethical Hacker. Security researcher focused on vulnerability assessment, penetration testing, and cyber defense.
-      </p>
+      <p>I’m a Cybersecurity Enthusiast & Ethical Hacker focused on vulnerability assessment, penetration testing, and cyber defense.</p>
     </header>
 
-    <!-- Newsletter Section -->
+    <!-- Quick Navigation Cards -->
+    <div class="grid">
+      <a class="card" href="#newsletter">Newsletter</a>
+      <a class="card" href="#intro">Intro</a>
+      <a class="card" href="#work">My Work</a>
+      <a class="card" href="#about">About</a>
+      <a class="card" href="#social">Social</a>
+    </div>
+
+    <!-- Newsletter -->
     <section id="newsletter" class="section">
       <h2>Newsletter</h2>
-      <p>
-        Accelerate your journey to landing your first cybersecurity job with this FREE weekly newsletter—packed with exclusive tips, insights, and career advice tailored to help you break into the cybersecurity field!
-      </p>
+      <p>Accelerate your journey into cybersecurity with a FREE weekly newsletter packed with insights and exclusive content to help you break into the field!</p>
 
       <!-- MailChimp Form -->
       <form action="https://YOUR_DC.api.mailchimp.com/subscribe/post?u=YOUR_U&amp;id=YOUR_ID" method="post" target="_blank" novalidate>
@@ -50,57 +52,37 @@
       <p class="privacy">I respect your privacy. Unsubscribe at any time.</p>
     </section>
 
-    <!-- Intro Section -->
+    <!-- Intro -->
     <section id="intro" class="section">
       <h2>Intro</h2>
       <p><strong>Welcome to the Edge of Cyberspace</strong></p>
-      <p>
-        You’ve just accessed the digital domain of a cybersecurity enthusiast and ethical hacker passionate about exploring the hidden layers of the internet, exposing vulnerabilities, and building digital fortresses.
-      </p>
-      <p>
-        Here, curiosity meets code. Defense is crafted with precision. And every exploit is an opportunity to learn.
-      </p>
-      <p>
-        Trace the signal. Break the system. Strengthen the future.
-      </p>
+      <p>You’ve accessed the digital domain of a cybersecurity enthusiast passionate about exploring the hidden layers of the internet, exposing vulnerabilities, and building digital fortresses.</p>
+      <p>Here, curiosity meets code. Defense is crafted with precision. And every exploit is an opportunity to learn.</p>
+      <p>Trace the signal. Break the system. Strengthen the future.</p>
     </section>
 
-    <!-- Work Section -->
+    <!-- Work -->
     <section id="work" class="section">
       <h2>My Work</h2>
-      <p>
-        My work is rooted in curiosity, precision, and ethical responsibility. I specialize in discovering system weaknesses before the adversaries do — turning potential threats into hardened defenses.
-      </p>
-      <p>I engage in projects involving:</p>
+      <p>I specialize in discovering system weaknesses before the adversaries do — turning potential threats into hardened defenses.</p>
       <ul>
-        <li>Penetration Testing: Simulating real-world attacks to identify and exploit vulnerabilities.</li>
-        <li>Vulnerability Research: Deep analysis of systems, protocols, and applications to uncover flaws.</li>
-        <li>Security Audits: Full-stack assessments of infrastructure, from networks to web applications.</li>
-        <li>Threat Modeling & Defense: Designing strategies to prevent, detect, and mitigate cyber threats.</li>
+        <li><strong>Penetration Testing:</strong> Simulating real-world attacks to identify and exploit vulnerabilities.</li>
+        <li><strong>Vulnerability Research:</strong> Deep analysis of systems, protocols, and applications to uncover flaws.</li>
+        <li><strong>Security Audits:</strong> Full-stack assessments of infrastructure.</li>
+        <li><strong>Threat Modeling & Defense:</strong> Strategic design to prevent, detect, and mitigate cyber threats.</li>
       </ul>
-      <p>
-        Whether it's freelance consulting, collaboration on open-source security tools, or private research, I bring technical expertise and a hacker mindset to every mission.
-      </p>
-      <p><strong>If it's broken — I’ll find it. If it can be secured, I’ll help build it.</strong></p>
+      <p>Whether it's freelance consulting or private research, I bring technical expertise and a hacker mindset to every mission.</p>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
       <h2>About</h2>
       <p><strong>Cybersecurity Enthusiast & Ethical Hacker</strong></p>
-      <p>
-        I’m a cybersecurity enthusiast driven by a passion for exploring, learning, and securing the digital systems that shape our world. I work as a security researcher, focusing on vulnerability assessment, penetration testing, and cyber defense strategies.
-      </p>
-      <p>
-        With a technical and ethical mindset, I investigate weaknesses, simulate real-world attacks, and develop solutions to strengthen digital environments. I believe security starts with knowledge, and I’m constantly evolving to keep up with threats that never stand still.
-      </p>
+      <p>I’m driven by curiosity and committed to protecting the digital world. I simulate real-world attacks, investigate vulnerabilities, and develop defensive strategies. Security starts with knowledge — and I never stop learning.</p>
       <p><em>“To beat a hacker, you need to think like one.”</em></p>
-      <p>
-        If you're looking for someone committed to security, fueled by technical curiosity, and guided by ethical principles — Welcome to my world!
-      </p>
     </section>
 
-    <!-- Social Links Section -->
+    <!-- Social -->
     <section id="social" class="section">
       <h2>Social</h2>
       <div class="grid">
@@ -115,6 +97,13 @@
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Cyb3rX. All rights reserved.</p>
+    </footer>
   </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>

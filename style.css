@@ -1,45 +1,78 @@
+/* ========== Base ========== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: "Parkinsans", sans-serif;
+  padding: 2rem;
   background-color: #000;
   color: #9b9c9d;
+  font-family: "Parkinsans", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
 }
 
+/* ========== Typography ========== */
 .parkinsans-light {
-  font-family: "Parkinsans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 
 .parkinsans-regular {
-  font-family: "Parkinsans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 .parkinsans-bold {
-  font-family: "Parkinsans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
 }
 
+h1,
+h2 {
+  font-weight: 800;
+  color: #d7d7e0;
+  margin: 1.5rem 0 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #9b9c9d;
+}
+
+/* ========== Layout & Structure ========== */
 .container {
-  max-width: 700px;
   width: 100%;
+  max-width: 700px;
   text-align: center;
 }
 
+.section {
+  margin-top: 4rem;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.section:nth-of-type(1) { animation-delay: 0.3s; }
+.section:nth-of-type(2) { animation-delay: 0.6s; }
+.section:nth-of-type(3) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Avatar ========== */
 .avatar {
   width: 80px;
   height: 80px;
@@ -47,21 +80,7 @@ body {
   margin-bottom: 1rem;
 }
 
-h1,
-h2 {
-  font-weight: 800;
-  margin: 1.5rem 0 1rem;
-  font-family: "Parkinsans", sans-serif;
-  color: #d7d7e0;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Parkinsans", sans-serif;
-  color: #9b9c9d;
-}
-
+/* ========== Form ========== */
 input,
 button {
   width: 100%;
@@ -69,6 +88,7 @@ button {
   margin-bottom: 1rem;
   border: none;
   border-radius: 0.5rem;
+  font-family: inherit;
 }
 
 input {
@@ -89,6 +109,7 @@ button {
   color: #9b9c9d;
 }
 
+/* ========== Cards / Links ========== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -105,9 +126,9 @@ button {
   justify-content: center;
   gap: 0.5rem;
   font-weight: 300;
-  cursor: pointer;
   color: #9b9c9d;
   text-decoration: none;
+  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -117,33 +138,7 @@ button {
   box-shadow: 0 0 15px #1A1B1E;
 }
 
-.section {
-  margin-top: 4rem;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.section:nth-of-type(1) {
-  animation-delay: 0.3s;
-}
-
-.section:nth-of-type(2) {
-  animation-delay: 0.6s;
-}
-
-.section:nth-of-type(3) {
-  animation-delay: 0.9s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ========== Navigation ========== */
 nav {
   position: sticky;
   top: 0;

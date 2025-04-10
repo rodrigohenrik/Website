@@ -11,9 +11,9 @@ async function fetchUserData() {
     const data = await response.json();
     profilePic.src = data.avatar_url;
     userName.textContent = data.name || data.login;
-    bio.textContent = data.bio || 'Sem biografia disponível.';
+    bio.textContent = data.bio || 'No biography available.';
   } catch (error) {
-    console.error('Erro ao buscar dados do usuário:', error);
+    console.error('Error fetching user data:', error);
   }
 }
 
@@ -25,11 +25,11 @@ async function fetchUserRepos() {
     reposList.innerHTML = repos.map(repo => `
       <div class="repo">
         <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-        <p>${repo.description || 'Sem descrição disponível.'}</p>
+        <p>${repo.description || 'No description available.'}</p>
       </div>
     `).join('');
   } catch (error) {
-    console.error('Erro ao buscar repositórios:', error);
+    console.error('Error fetching repositories:', error);
   }
 }
 

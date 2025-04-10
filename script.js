@@ -1,31 +1,51 @@
+// script.js
+
 const username = 'rodrigohenrik';
 const profilePic = document.getElementById('profile-pic');
 const userName = document.getElementById('username');
 const bio = document.getElementById('bio');
 const reposList = document.getElementById('repos-list');
+const container = document.querySelector('.container');
+const loader = document.getElementById('loader');
 
-// Função para buscar dados do usuário
+// Inicializa animações AOS
+AOS.init();
+
+// Efeito de digitação para o título
+function typingEffect(text, element, speed = 100) {
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+}
+
+// Exibe os dados do usuário
 async function fetchUserData() {
   try {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    const data = await res.json();
     profilePic.src = data.avatar_url;
-    userName.textContent = data.name || data.login;
-    bio.textContent = data.bio || 'Sem biografia disponível.';
+    typingEffect(data.name || data.login, userName);
+    bio.textContent = data.bio || 'Desenvolvedor apaixonado por tecnologia.';
   } catch (error) {
     console.error('Erro ao buscar dados do usuário:', error);
   }
 }
 
-// Função para buscar repositórios do usuário
+// Lista os repositórios do GitHub
 async function fetchUserRepos() {
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos`);
-    const repos = await response.json();
+    const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+    const repos = await res.json();
     reposList.innerHTML = repos.map(repo => `
-      <div class="repo">
+      <div class="repo" data-aos="fade-up">
         <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-        <p>${repo.description || 'Sem descrição disponível.'}</p>
+        <p>${repo.description || 'Sem descrição.'}</p>
       </div>
     `).join('');
   } catch (error) {
@@ -33,6 +53,10 @@ async function fetchUserRepos() {
   }
 }
 
-// Carregar dados ao iniciar
-fetchUserData();
-fetchUserRepos();
+// Delay de carregamento + inicia tudo
+setTimeout(() => {
+  loader.style.display = 'none';
+  container.style.display = 'block';
+  fetchUserData();
+  fetchUserRepos();
+}, 1800);

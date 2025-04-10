@@ -1,74 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rodrigo Henrik | Desenvolvedor</title>
-
-  <!-- Fonte Parkinsans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" />
-
-  <!-- Animações scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodrigo Henrik | My Personal Website</title>
+  <!-- Google Font: Parkinsans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Loader estilo terminal -->
-  <div id="loader">
-    <p>Carregando<span class="dots">...</span></p>
-  </div>
-
-  <!-- Conteúdo principal -->
-  <div id="main-content" class="hidden">
+  <div class="container">
     <header>
-      <img id="profile-pic" src="" alt="Foto de perfil" />
-      <h1><span class="typing"></span></h1>
+      <img id="profile-pic" src="" alt="Rodrigo Henrik">
+      <h1 id="username"></h1>
       <p id="bio"></p>
-      <div class="social">
-        <a href="https://github.com/rodrigohenrik" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Currículo</a>
-      </div>
     </header>
-
-    <section id="projects" data-aos="fade-up">
-      <h2>Projetos em destaque</h2>
-      <div id="repos-list" class="repo-container"></div>
+    <section id="repos">
+      <h2>Repositories</h2>
+      <div id="repos-list"></div>
     </section>
-
-    <section id="about" data-aos="fade-up">
-      <h2>Sobre mim</h2>
-      <p>Desenvolvedor focado em soluções eficientes, automação, segurança da informação e experiências modernas. Acredito em código limpo, boas práticas e inovação constante.</p>
-    </section>
-
-    <section id="timeline" data-aos="fade-up">
-      <h2>Trajetória</h2>
-      <ul class="timeline">
-        <li><strong>2025:</strong> Criando impacto com soluções open-source.</li>
-        <li><strong>2023:</strong> Contribuições em projetos backend e APIs REST.</li>
-        <li><strong>2022:</strong> Foco em segurança, automação e integração de sistemas.</li>
-      </ul>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-      <h2>Contato</h2>
-      <p>Entre em contato via <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a> ou pelas redes sociais.</p>
-    </section>
-
-    <footer>
-      <p>© 2025 Rodrigo Henrik</p>
-    </footer>
   </div>
-
-  <!-- Scripts -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>

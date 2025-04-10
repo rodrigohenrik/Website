@@ -1,31 +1,38 @@
 const username = 'rodrigohenrik';
+const profilePic = document.getElementById('profile-pic');
+const userName = document.getElementById('username');
+const bio = document.getElementById('bio');
+const reposList = document.getElementById('repos-list');
 
-async function fetchGitHubData() {
+// Função para buscar dados do usuário
+async function fetchUserData() {
   try {
-    // Busca dados do perfil
-    const profileResponse = await fetch(`https://api.github.com/users/${username}`);
-    const profileData = await profileResponse.json();
-    document.getElementById('profile-pic').src = profileData.avatar_url;
-    document.getElementById('username').innerText = profileData.name || profileData.login;
-    document.getElementById('bio').innerText = profileData.bio || 'Desenvolvedor entusiasta de tecnologia.';
-
-    // Busca repositórios
-    const reposResponse = await fetch(`https://api.github.com/users/${username}/repos`);
-    const reposData = await reposResponse.json();
-    const reposList = document.getElementById('repos-list');
-    reposData.forEach(repo => {
-      const repoElement = document.createElement('div');
-      repoElement.classList.add('repo');
-      repoElement.innerHTML = `
-        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-        <p>${repo.description || 'Sem descrição disponível.'}</p>
-      `;
-      reposList.appendChild(repoElement);
-    });
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    const data = await response.json();
+    profilePic.src = data.avatar_url;
+    userName.textContent = data.name || data.login;
+    bio.textContent = data.bio || 'Sem biografia disponível.';
   } catch (error) {
-    console.error('Erro ao buscar dados do GitHub:', error);
+    console.error('Erro ao buscar dados do usuário:', error);
   }
 }
 
-// Chama a função ao carregar a página
-fetchGitHubData();
+// Função para buscar repositórios do usuário
+async function fetchUserRepos() {
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}/repos`);
+    const repos = await response.json();
+    reposList.innerHTML = repos.map(repo => `
+      <div class="repo">
+        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+        <p>${repo.description || 'Sem descrição disponível.'}</p>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error('Erro ao buscar repositórios:', error);
+  }
+}
+
+// Carregar dados ao iniciar
+fetchUserData();
+fetchUserRepos();

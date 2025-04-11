@@ -203,7 +203,7 @@ body.light-mode footer {
 
 /* ========== Toggle Button ========== */
 .theme-toggle {
-  widht:5% !important;
+  widht:5%;
   position: fixed;
   top: 1rem;
   right: 1rem;

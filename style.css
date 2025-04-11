@@ -232,6 +232,7 @@ body.light-mode footer {
 
 /* ========== Toggle Button ========== */
 .theme-toggle {
+  widht:5%;
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -277,7 +278,6 @@ body.light-mode footer {
   }
 
   .theme-toggle {
-    width:5%;
     top: auto;
     bottom: 1rem;
     right: 1rem;

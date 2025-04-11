@@ -217,6 +217,10 @@ body.light-mode footer {
   z-index: 1001;
 }
 
+.tuggle {
+  width: 5%;
+}
+
 /* ========== Responsive Design ========== */
 @media (max-width: 480px) {
   h1 {

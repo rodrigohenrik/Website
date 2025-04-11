@@ -169,35 +169,6 @@ body.light-mode .card:hover {
   box-shadow: 0 0 10px #ccc;
 }
 
-/* ========== Navigation ========== */
-nav {
-  position: sticky;
-  top: 0;
-  background-color: #000;
-  padding: 1rem;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-body.light-mode nav {
-  background-color: #f8f8f8;
-}
-
-nav a {
-  color: #2CC20E;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.5rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
 /* ========== Footer ========== */
 footer {
   text-align: center;
@@ -232,7 +203,7 @@ body.light-mode footer {
 
 /* ========== Toggle Button ========== */
 .theme-toggle {
-  widht:5%;
+  widht:5% !important;
   position: fixed;
   top: 1rem;
   right: 1rem;

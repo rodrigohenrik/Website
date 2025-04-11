@@ -203,12 +203,9 @@ body.light-mode footer {
 
 /* ========== Toggle Button ========== */
 .theme-toggle {
-  widht:5%;
   position: fixed;
   top: 1rem;
   right: 1rem;
-  background: #2CC20E;
-  color: #fff;
   padding: 0.4rem 0.75rem;
   border: none;
   border-radius: 20px;

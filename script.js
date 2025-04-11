@@ -1,7 +1,7 @@
 // Toggle light/dark mode
 const themeToggle = document.createElement('button');
 themeToggle.className = 'theme-toggle';
-themeToggle.innerText = '🌞 🌕';
+themeToggle.innerText = '🔆';
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
 });

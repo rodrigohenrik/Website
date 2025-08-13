@@ -80,17 +80,6 @@
       </div>
     </section>
 
-    <!-- Quick Cards -->
-    <section class="section" aria-label="Navegação rápida">
-      <div class="grid">
-        <a class="card" href="#newsletter">Newsletter</a>
-        <a class="card" href="#intro">Intro</a>
-        <a class="card" href="#work">Meu Trabalho</a>
-        <a class="card" href="#about">Sobre</a>
-        <a class="card" href="#social">Social</a>
-      </div>
-    </section>
-
     <!-- Newsletter -->
     <section id="newsletter" class="section" aria-labelledby="news-title">
       <h2 id="news-title">Newsletter</h2>
@@ -126,6 +115,26 @@
         <li><strong>Auditorias de Segurança:</strong> visão full-stack da infraestrutura.</li>
         <li><strong>Ameaças & Defesa:</strong> desenho estratégico para prevenir, detectar e mitigar.</li>
       </ul>
+
+      <section id="repos" class="section" aria-labelledby="repos-title">
+  <h2 id="repos-title">Repositórios</h2>
+
+  <div class="toolbar grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <input id="repo-search" type="search" placeholder="Buscar por nome/descrição…" aria-label="Buscar" />
+    <select id="repo-lang" aria-label="Filtrar por linguagem">
+      <option value="">Todas as linguagens</option>
+    </select>
+    <select id="repo-sort" aria-label="Ordenar">
+      <option value="updated">Atualizados recentemente</option>
+      <option value="stars">Mais estrelados</option>
+      <option value="name">Nome (A–Z)</option>
+    </select>
+  </div>
+
+  <div id="repo-grid" class="projects grid" aria-live="polite"></div>
+  <p id="repo-msg" class="privacy"></p>
+</section>
+
 
       <!-- Grid de projetos (exemplo) -->
       <div class="projects grid">
@@ -182,3 +191,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+

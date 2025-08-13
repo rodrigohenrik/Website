@@ -116,26 +116,6 @@
         <li><strong>Ameaças & Defesa:</strong> desenho estratégico para prevenir, detectar e mitigar.</li>
       </ul>
 
-      <section id="repos" class="section" aria-labelledby="repos-title">
-  <h2 id="repos-title">Repositórios</h2>
-
-  <div class="toolbar grid" style="grid-template-columns: 1fr 1fr 1fr;">
-    <input id="repo-search" type="search" placeholder="Buscar por nome/descrição…" aria-label="Buscar" />
-    <select id="repo-lang" aria-label="Filtrar por linguagem">
-      <option value="">Todas as linguagens</option>
-    </select>
-    <select id="repo-sort" aria-label="Ordenar">
-      <option value="updated">Atualizados recentemente</option>
-      <option value="stars">Mais estrelados</option>
-      <option value="name">Nome (A–Z)</option>
-    </select>
-  </div>
-
-  <div id="repo-grid" class="projects grid" aria-live="polite"></div>
-  <p id="repo-msg" class="privacy"></p>
-</section>
-
-
       <!-- Grid de projetos (exemplo) -->
       <div class="projects grid">
         <article class="project-card">
@@ -155,6 +135,25 @@
         </article>
       </div>
     </section>
+
+    <section id="repos" class="section" aria-labelledby="repos-title">
+  <h2 id="repos-title">Repositórios</h2>
+
+  <div class="toolbar grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <input id="repo-search" type="search" placeholder="Buscar por nome/descrição…" aria-label="Buscar" />
+    <select id="repo-lang" aria-label="Filtrar por linguagem">
+      <option value="">Todas as linguagens</option>
+    </select>
+    <select id="repo-sort" aria-label="Ordenar">
+      <option value="updated">Atualizados recentemente</option>
+      <option value="stars">Mais estrelados</option>
+      <option value="name">Nome (A–Z)</option>
+    </select>
+  </div>
+
+  <div id="repo-grid" class="projects grid" aria-live="polite"></div>
+  <p id="repo-msg" class="privacy"></p>
+</section>
 
     <!-- About -->
     <section id="about" class="section" aria-labelledby="about-title">
@@ -191,4 +190,5 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
 

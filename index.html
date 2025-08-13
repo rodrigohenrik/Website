@@ -1,107 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rodrigo Henrik | Cybersecurity Enthusiast & Ethical Hacker</title>
 
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+  <!-- SEO Básico -->
+  <meta name="description" content="Vulnerability assessment, pentest e cyber defense com foco em resultados práticos. Conteúdos, projetos e newsletter semanal." />
+  <link rel="canonical" href="https://seu-dominio.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Rodrigo Henrik | Cybersecurity & Ethical Hacking" />
+  <meta property="og:description" content="Pentest, pesquisa de vulnerabilidades e defesa cibernética. Assine a newsletter." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seu-dominio.com/" />
+  <meta property="og:image" content="https://github.com/rodrigohenrik.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD (schema.org Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rodrigo Henrik",
+    "image": "https://github.com/rodrigohenrik.png",
+    "jobTitle": "Cybersecurity Enthusiast & Ethical Hacker",
+    "url": "https://seu-dominio.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/seu-perfil",
+      "https://twitter.com/seu-perfil",
+      "https://github.com/rodrigohenrik"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <div class="container" id="home">
-
-    <!-- Hero -->
-    <header class="section">
-      <img src="https://github.com/cyb3rxhkr.png" alt="Cyb3rX" class="avatar" />
-      <h1>Hey — I'm Rodrigo Henrik.</h1>
-      <p>I’m a Cybersecurity Enthusiast & Ethical Hacker focused on vulnerability assessment, penetration testing, and cyber defense.</p>
-
-    </header>
-
-    <!-- Quick Navigation Cards -->
-    <div class="grid">
-      <a class="card" href="#home">Home</a>
-      <a class="card" href="#newsletter">Newsletter</a>
-      <a class="card" href="#intro">Intro</a>
-      <a class="card" href="#work">My Work</a>
-      <a class="card" href="#about">About</a>
-      <a class="card" href="#social">Social</a>
-    </div>
-
-    <!-- Newsletter -->
-    <section id="newsletter" class="section">
-      <h2>Newsletter</h2>
-      <p>Accelerate your journey into cybersecurity with a FREE weekly newsletter packed with insights and exclusive content to help you break into the field!</p>
-
-      <!-- MailChimp Form -->
-      <form action="https://YOUR_DC.api.mailchimp.com/subscribe/post?u=YOUR_U&amp;id=YOUR_ID" method="post" target="_blank" novalidate>
-        <input type="text" name="FNAME" placeholder="First Name" />
-        <input type="email" name="EMAIL" placeholder="Email Address" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="privacy">I respect your privacy. Unsubscribe at any time.</p>
-    </section>
-
-    <!-- Intro -->
-    <section id="intro" class="section">
-      <h2>Intro</h2>
-      <p><strong>Welcome to the Edge of Cyberspace</strong></p>
-      <p>You’ve accessed the digital domain of a cybersecurity enthusiast passionate about exploring the hidden layers of the internet, exposing vulnerabilities, and building digital fortresses.</p>
-      <p>Here, curiosity meets code. Defense is crafted with precision. And every exploit is an opportunity to learn.</p>
-      <p>Trace the signal. Break the system. Strengthen the future.</p>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="section">
-      <h2>My Work</h2>
-      <p>I specialize in discovering system weaknesses before the adversaries do — turning potential threats into hardened defenses.</p>
-      <ul>
-        <li><strong>Penetration Testing:</strong> Simulating real-world attacks to identify and exploit vulnerabilities.</li>
-        <li><strong>Vulnerability Research:</strong> Deep analysis of systems, protocols, and applications to uncover flaws.</li>
-        <li><strong>Security Audits:</strong> Full-stack assessments of infrastructure.</li>
-        <li><strong>Threat Modeling & Defense:</strong> Strategic design to prevent, detect, and mitigate cyber threats.</li>
+  <!-- Barra de Navegação Fixa -->
+  <header class="site-header" data-header>
+    <a href="#home" class="brand" aria-label="Ir para início">RH</a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">☰</button>
+      <ul id="primary-menu">
+        <li><a href="#home" data-nav>Home</a></li>
+        <li><a href="#newsletter" data-nav>Newsletter</a></li>
+        <li><a href="#intro" data-nav>Intro</a></li>
+        <li><a href="#work" data-nav>Trabalho</a></li>
+        <li><a href="#about" data-nav>Sobre</a></li>
+        <li><a href="#social" data-nav>Social</a></li>
       </ul>
-      <p>Whether it's freelance consulting or private research, I bring technical expertise and a hacker mindset to every mission.</p>
-    </section>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+  </header>
 
-    <!-- About -->
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>I'm Rodrigo Henrik, a Cybersecurity Enthusiast and Ethical Hacker, fueled by curiosity and a mission to protect the digital realm.</p>
-      <p>I simulate real-world attacks, uncover vulnerabilities, and build solid defense strategies that actually hold up.</p>
-      <p>Every system tells a story — and I dig deep to find the weak spots before the bad actors do.</p>
-      <p><strong>Vulnerability assessment. Penetration testing. Cyber defense.</strong> This isn't just my skill set — it's my mindset.</p>
-      <p>In a world where threats evolve every second, <strong>knowledge is the first line of defense.</strong></p>
-      <blockquote>“To beat a hacker, you need to think like one.”<br><span style="opacity: 0.6;">I live by that.</span></blockquote>
-    </section>
-
-    <!-- Social -->
-    <section id="social" class="section">
-      <h2>Social</h2>
-      <div class="grid">
-        <a class="card" href="#">Cybersecurity Training</a>
-        <a class="card" href="#">Join our Discord community</a>
-        <a class="card" href="#">Follow me on LinkedIn</a>
-        <a class="card" href="#">UnixGuy YouTube Channel</a>
-        <a class="card" href="#">Follow me on Twitter</a>
-        <a class="card" href="#">Follow me on Facebook</a>
-        <a class="card" href="#">Follow me on TikTok</a>
-        <a class="card" href="#">Follow me on Instagram</a>
+  <main id="home" class="container">
+    <!-- Hero -->
+    <section class="section hero" aria-labelledby="hero-title">
+      <img src="https://github.com/rodrigohenrik.png" alt="Foto/Avatar de Rodrigo Henrik" class="avatar" width="120" height="120" loading="lazy" />
+      <div>
+        <h1 id="hero-title">Hey — sou o Rodrigo Henrik.</h1>
+        <p class="lede">
+          Cybersecurity Enthusiast & Ethical Hacker focado em <strong>vulnerability assessment</strong>, <strong>pentest</strong> e <strong>defesa cibernética</strong>.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#newsletter">Assinar newsletter</a>
+          <a class="btn btn-ghost" href="#work">Ver projetos</a>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Rodrigo Henrik. All rights reserved.</p>
-    </footer>
-  </div>
+    <!-- Quick Cards -->
+    <section class="section" aria-label="Navegação rápida">
+      <div class="grid">
+        <a class="card" href="#newsletter">Newsletter</a>
+        <a class="card" href="#intro">Intro</a>
+        <a class="card" href="#work">Meu Trabalho</a>
+        <a class="card" href="#about">Sobre</a>
+        <a class="card" href="#social">Social</a>
+      </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+    <!-- Newsletter -->
+    <section id="newsletter" class="section" aria-labelledby="news-title">
+      <h2 id="news-title">Newsletter</h2>
+      <p>Receba, semanalmente, insights práticos de cibersegurança e conteúdo exclusivo para acelerar sua trajetória no campo.</p>
+
+      <form id="mc-form" class="newsletter-form" action="YOUR_MC_POST_URL" method="post" target="_blank" novalidate>
+        <label class="sr-only" for="fname">Nome</label>
+        <input id="fname" name="FNAME" type="text" placeholder="Seu nome" autocomplete="given-name" />
+        <label class="sr-only" for="email">E-mail</label>
+        <input id="email" name="EMAIL" type="email" placeholder="Seu e-mail" autocomplete="email" required inputmode="email" />
+        <button type="submit" class="btn btn-primary">Inscrever</button>
+        <p class="privacy">Respeito sua privacidade. Você pode cancelar quando quiser.</p>
+        <p class="form-msg" aria-live="polite" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Intro -->
+    <section id="intro" class="section" aria-labelledby="intro-title">
+      <h2 id="intro-title">Intro</h2>
+      <p><strong>Welcome to the Edge of Cyberspace</strong></p>
+      <p>Você chegou ao domínio de um entusiasta de segurança apaixonado por explorar camadas ocultas, expor vulnerabilidades e construir fortalezas digitais.</p>
+      <p>Curiosidade encontra código. Defesa é precisão. Cada exploit é aprendizado.</p>
+      <p>Trace o sinal. Quebre o sistema. Fortaleça o futuro.</p>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section" aria-labelledby="work-title">
+      <h2 id="work-title">Meu Trabalho</h2>
+      <p>Identifico fraquezas antes dos adversários — transformando riscos em defesas sólidas.</p>
+      <ul class="bullet">
+        <li><strong>Pentest:</strong> simulações realistas para identificar e explorar falhas.</li>
+        <li><strong>Pesquisa de Vulnerabilidades:</strong> análise profunda de sistemas, protocolos e apps.</li>
+        <li><strong>Auditorias de Segurança:</strong> visão full-stack da infraestrutura.</li>
+        <li><strong>Ameaças & Defesa:</strong> desenho estratégico para prevenir, detectar e mitigar.</li>
+      </ul>
+
+      <!-- Grid de projetos (exemplo) -->
+      <div class="projects grid">
+        <article class="project-card">
+          <h3>API Hardening Playbook</h3>
+          <p>Checklist tático para endurecimento de APIs REST/GraphQL com prioridade por risco.</p>
+          <a href="#" class="project-link">Ver detalhes</a>
+        </article>
+        <article class="project-card">
+          <h3>Bug Hunting Notes</h3>
+          <p>Repositório (curado) de técnicas, payloads e heurísticas para bug bounty.</p>
+          <a href="#" class="project-link">Ver repositório</a>
+        </article>
+        <article class="project-card">
+          <h3>Red Team Labs</h3>
+          <p>Cenários de laboratório para treinamento ofensivo/defensivo em pequena escala.</p>
+          <a href="#" class="project-link">Explorar</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre</h2>
+      <p>Sou o Rodrigo Henrik, Ethical Hacker movido por curiosidade e missão: proteger o digital.</p>
+      <p>Simulo ataques reais, antecipo vulnerabilidades e construo estratégias que aguentam tranco.</p>
+      <blockquote>
+        “Para vencer um hacker, pense como um.” <span class="subtle">— é meu modus operandi.</span>
+      </blockquote>
+    </section>
+
+    <!-- Social -->
+    <section id="social" class="section" aria-labelledby="social-title">
+      <h2 id="social-title">Social</h2>
+      <div class="grid">
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">Treinamentos</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">YouTube (UnixGuy)</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="card" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Rodrigo Henrik. Todos os direitos reservados.</p>
+    <a href="#" class="scroll-top" aria-label="Voltar ao topo">↑</a>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
-

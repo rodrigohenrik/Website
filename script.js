@@ -109,7 +109,7 @@ form?.addEventListener('submit', (e) => {
 $('#year').textContent = new Date().getFullYear();
 
 (async function githubRepos() {
-  const USER = 'GITHUB_USER';                 // <- seu username
+  const USER = 'rodrigohenrik';                 // <- seu username
   const CACHE_KEY = `gh-repos:${USER}`;
   const CACHE_TTL = 1000 * 60 * 30;           // 30 min
 

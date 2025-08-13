@@ -22,6 +22,7 @@
     --card: #ececec;
     --card-hover: #e0e0e0;
     --border: #d8d8d8;
+    --focus: #2746a0;
   }
 }
 
@@ -137,6 +138,24 @@ body {
 .project-link { display: inline-block; margin-top: .5rem; color: var(--text-strong); text-decoration: none; }
 .project-link:hover { text-decoration: underline; }
 
+/* Toolbar repos */
+.toolbar input, .toolbar select {
+  background: var(--bg-elev); color: var(--text);
+  border: 1px solid var(--border); border-radius: 12px; padding: .7rem;
+}
+.repo-lang-badge {
+  display:inline-block; padding:.15rem .5rem; border-radius:999px;
+  border:1px solid var(--border); font-size:.8rem; margin-left:.4rem;
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, var(--card), var(--card-hover), var(--card));
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
 /* Rodapé e scroll-top */
 .site-footer {
   border-top: 1px solid var(--border);
@@ -151,14 +170,17 @@ body {
 }
 .scroll-top.is-visible { opacity: 1; pointer-events: auto; }
 
-/* Foco visível */
+/* Acessibilidade */
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.subtle { opacity: .65; }
 
 /* Animações suaves */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
-
-.subtle { opacity: .65; }
 
 /* Responsivo */
 @media (max-width: 720px) {
@@ -175,16 +197,28 @@ body {
   .reveal, .card, .scroll-top { transition: none !important; }
 }
 
-.toolbar input, .toolbar select {
-  background: var(--bg-elev); color: var(--text);
-  border: 1px solid var(--border); border-radius: 12px; padding: .7rem;
+/* === Overrides do alternador de tema (forçam o tema escolhido) === */
+body[data-theme="dark"] {
+  --bg: #000000;
+  --bg-elev: #141416;
+  --text: #bfc0c2;
+  --text-strong: #e7e7ee;
+  --muted: #8f9094;
+  --brand: #2cc20e;
+  --brand-ink: #0e4006;
+  --card: #1b1c1f;
+  --card-hover: #17181a;
+  --border: #232427;
+  --focus: #7c9cff;
 }
-.repo-lang-badge {
-  display:inline-block; padding:.15rem .5rem; border-radius:999px;
-  border:1px solid var(--border); font-size:.8rem; margin-left:.4rem;
+body[data-theme="light"] {
+  --bg: #f8f8f8;
+  --bg-elev: #ffffff;
+  --text: #222;
+  --text-strong: #111;
+  --muted: #555;
+  --card: #ececec;
+  --card-hover: #e0e0e0;
+  --border: #d8d8d8;
+  --focus: #2746a0;
 }
-.skeleton {
-  background: linear-gradient(90deg, var(--card), var(--card-hover), var(--card));
-  background-size: 200% 100%; animation: shimmer 1.2s infinite linear;
-}
-@keyframes shimmer { to { background-position: -200% 0; } }

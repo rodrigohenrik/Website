@@ -57,6 +57,7 @@
         <li><a href="#newsletter" data-nav>Newsletter</a></li>
         <li><a href="#intro" data-nav>Intro</a></li>
         <li><a href="#work" data-nav>Trabalho</a></li>
+        <li><a href="#repos" data-nav>Repositórios</a></li>
         <li><a href="#about" data-nav>Sobre</a></li>
         <li><a href="#social" data-nav>Social</a></li>
       </ul>
@@ -77,6 +78,18 @@
           <a class="btn btn-primary" href="#newsletter">Assinar newsletter</a>
           <a class="btn btn-ghost" href="#work">Ver projetos</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Navegação rápida -->
+    <section class="section" aria-label="Navegação rápida">
+      <div class="grid">
+        <a class="card" href="#newsletter">Newsletter</a>
+        <a class="card" href="#intro">Intro</a>
+        <a class="card" href="#work">Meu Trabalho</a>
+        <a class="card" href="#repos">Repositórios</a>
+        <a class="card" href="#about">Sobre</a>
+        <a class="card" href="#social">Social</a>
       </div>
     </section>
 
@@ -105,7 +118,7 @@
       <p>Trace o sinal. Quebre o sistema. Fortaleça o futuro.</p>
     </section>
 
-    <!-- Work -->
+    <!-- Meu Trabalho -->
     <section id="work" class="section" aria-labelledby="work-title">
       <h2 id="work-title">Meu Trabalho</h2>
       <p>Identifico fraquezas antes dos adversários — transformando riscos em defesas sólidas.</p>
@@ -136,26 +149,27 @@
       </div>
     </section>
 
+    <!-- Repositórios (dinâmico via GitHub API) -->
     <section id="repos" class="section" aria-labelledby="repos-title">
-  <h2 id="repos-title">Repositórios</h2>
+      <h2 id="repos-title">Repositórios</h2>
 
-  <div class="toolbar grid" style="grid-template-columns: 1fr 1fr 1fr;">
-    <input id="repo-search" type="search" placeholder="Buscar por nome/descrição…" aria-label="Buscar" />
-    <select id="repo-lang" aria-label="Filtrar por linguagem">
-      <option value="">Todas as linguagens</option>
-    </select>
-    <select id="repo-sort" aria-label="Ordenar">
-      <option value="updated">Atualizados recentemente</option>
-      <option value="stars">Mais estrelados</option>
-      <option value="name">Nome (A–Z)</option>
-    </select>
-  </div>
+      <div class="toolbar grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <input id="repo-search" type="search" placeholder="Buscar por nome/descrição…" aria-label="Buscar" />
+        <select id="repo-lang" aria-label="Filtrar por linguagem">
+          <option value="">Todas as linguagens</option>
+        </select>
+        <select id="repo-sort" aria-label="Ordenar">
+          <option value="updated">Atualizados recentemente</option>
+          <option value="stars">Mais estrelados</option>
+          <option value="name">Nome (A–Z)</option>
+        </select>
+      </div>
 
-  <div id="repo-grid" class="projects grid" aria-live="polite"></div>
-  <p id="repo-msg" class="privacy"></p>
-</section>
+      <div id="repo-grid" class="projects grid" aria-live="polite"></div>
+      <p id="repo-msg" class="privacy"></p>
+    </section>
 
-    <!-- About -->
+    <!-- Sobre -->
     <section id="about" class="section" aria-labelledby="about-title">
       <h2 id="about-title">Sobre</h2>
       <p>Sou o Rodrigo Henrik, Ethical Hacker movido por curiosidade e missão: proteger o digital.</p>
@@ -190,5 +204,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
-

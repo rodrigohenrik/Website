@@ -1,21 +1,22 @@
-/* Utilidades */
+/* ===================== Utilidades ===================== */
 const $ = (q, c = document) => c.querySelector(q);
 const $$ = (q, c = document) => Array.from(c.querySelectorAll(q));
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* Tema: persistência com localStorage */
+/* ===================== Tema com persistência ===================== */
 const THEME_KEY = 'rh-theme';
 const body = document.body;
 const themeBtn = $('.theme-toggle');
 
 function setTheme(mode) {
-  body.dataset.theme = mode; // data-theme para CSS custom props, se desejar
+  body.dataset.theme = mode; // aplica data-theme ao <body>
   themeBtn.setAttribute('aria-pressed', mode === 'light' ? 'true' : 'false');
   themeBtn.textContent = mode === 'light' ? '🌞' : '🌙';
   localStorage.setItem(THEME_KEY, mode);
 }
 function toggleTheme() {
-  const current = localStorage.getItem(THEME_KEY) || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  const current = localStorage.getItem(THEME_KEY)
+    || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   setTheme(current === 'light' ? 'dark' : 'light');
 }
 (function initTheme() {
@@ -25,7 +26,7 @@ function toggleTheme() {
 })();
 themeBtn.addEventListener('click', toggleTheme);
 
-/* Menu mobile */
+/* ===================== Menu mobile ===================== */
 const nav = $('.site-nav');
 const navToggle = $('.nav-toggle');
 navToggle?.addEventListener('click', () => {
@@ -34,7 +35,7 @@ navToggle?.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', String(!open));
 });
 
-/* Scroll spy (destaca link ativo) */
+/* ===================== Scroll spy ===================== */
 const navLinks = $$('a[data-nav]');
 const sections = navLinks.map(a => $(a.getAttribute('href')));
 const header = $('[data-header]');
@@ -52,14 +53,13 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: `-${SPY_OFFSET}px 0px -60% 0px`, threshold: 0.1 });
 sections.forEach(sec => sec && spy.observe(sec));
 
-/* Botão voltar ao topo */
+/* ===================== Voltar ao topo ===================== */
 const scrollTop = $('.scroll-top');
 function onScroll() {
   const y = window.scrollY || window.pageYOffset;
   if (y > 480) scrollTop.classList.add('is-visible');
   else scrollTop.classList.remove('is-visible');
 
-  // Header shadow sutil ao rolar
   header.style.boxShadow = y > 4 ? '0 6px 16px rgba(0,0,0,.15)' : 'none';
 }
 let ticking = false;
@@ -75,7 +75,7 @@ scrollTop.addEventListener('click', (e) => {
   window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
 });
 
-/* Revelar seções ao entrar na viewport */
+/* ===================== Reveal on view ===================== */
 const reveals = $$('.section, .card, .project-card');
 reveals.forEach(el => el.classList.add('reveal'));
 const revObs = new IntersectionObserver(es => {
@@ -88,7 +88,7 @@ const revObs = new IntersectionObserver(es => {
 }, { threshold: 0.12 });
 reveals.forEach(el => revObs.observe(el));
 
-/* Newsletter (validação básica + mensagem de feedback) */
+/* ===================== Newsletter feedback ===================== */
 const form = $('#mc-form');
 const msg = $('.form-msg');
 form?.addEventListener('submit', (e) => {
@@ -100,18 +100,19 @@ form?.addEventListener('submit', (e) => {
     $('#email').focus();
     return;
   }
-  // Para Mailchimp (target=_blank), exibimos feedback otimista:
   msg.textContent = 'Quase lá! Abrimos a página de confirmação.';
-  msg.style.color = 'var(--text)';
+  msg.style.color = 'inherit';
 });
 
-/* Ano dinâmico no rodapé */
+/* ===================== Ano dinâmico ===================== */
 $('#year').textContent = new Date().getFullYear();
 
+/* ===================== Repositórios do GitHub ===================== */
+/* Troque GITHUB_USER pelo seu username (ex.: 'cyb3rxhkr') */
 (async function githubRepos() {
-  const USER = 'rodrigohenrik';                 // <- seu username
+  const USER = 'GITHUB_USER';
   const CACHE_KEY = `gh-repos:${USER}`;
-  const CACHE_TTL = 1000 * 60 * 30;           // 30 min
+  const CACHE_TTL = 1000 * 60 * 30; // 30 min
 
   const grid = document.getElementById('repo-grid');
   const msg  = document.getElementById('repo-msg');
@@ -119,7 +120,6 @@ $('#year').textContent = new Date().getFullYear();
   const langSel = document.getElementById('repo-lang');
   const sortSel = document.getElementById('repo-sort');
 
-  // skeletons
   const showSkeletons = (n=6) => {
     grid.innerHTML = '';
     for (let i=0;i<n;i++){
@@ -130,7 +130,6 @@ $('#year').textContent = new Date().getFullYear();
     }
   };
 
-  // cache
   const getCache = () => {
     try {
       const raw = localStorage.getItem(CACHE_KEY);
@@ -142,9 +141,8 @@ $('#year').textContent = new Date().getFullYear();
   };
   const setCache = (data) => localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
 
-  // fetch com paginação (máx. 100 repos)
   async function fetchAllRepos() {
-    const perPage = 100; // pega tudo de uma vez para a maioria dos perfis
+    const perPage = 100;
     const url = `https://api.github.com/users/${USER}/repos?per_page=${perPage}&sort=updated`;
     const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' }});
     if (res.status === 403) {
@@ -155,7 +153,6 @@ $('#year').textContent = new Date().getFullYear();
     return res.json();
   }
 
-  // util: cria badge de linguagem com cor aproximada
   const langColor = (lang) => {
     const map = {
       'JavaScript':'#f1e05a','TypeScript':'#3178c6','Python':'#3572A5','Go':'#00ADD8','Rust':'#dea584',
@@ -165,15 +162,17 @@ $('#year').textContent = new Date().getFullYear();
     return `<span class="repo-lang-badge" style="border-color:${c};">${lang}</span>`;
   };
 
-  // estado e render
   let repos = [];
   function render(list) {
-    if (!list.length) {
-      grid.innerHTML = ''; msg.textContent = 'Nenhum repositório encontrado com os filtros atuais.'; return;
+    const visible = list.filter(r => !r.archived && !r.fork);
+    if (!visible.length) {
+      grid.innerHTML = '';
+      msg.textContent = 'Nenhum repositório encontrado com os filtros atuais.';
+      return;
     }
-    msg.textContent = ''; grid.innerHTML = '';
-    list.forEach(r => {
-      if (r.archived || r.fork) return; // oculta forks/arquivados; remova se quiser
+    msg.textContent = '';
+    grid.innerHTML = '';
+    visible.forEach(r => {
       const stars = r.stargazers_count.toLocaleString();
       const lang  = r.language ? langColor(r.language) : '';
       const desc  = r.description ? r.description : 'Sem descrição.';
@@ -192,13 +191,12 @@ $('#year').textContent = new Date().getFullYear();
     });
   }
 
-  // filtros
   function applyFilters() {
     const term = q.value.trim().toLowerCase();
     const lang = langSel.value;
     const sort = sortSel.value;
 
-    let list = repos.filter(r => !r.archived && !r.fork);
+    let list = [...repos];
     if (term) {
       list = list.filter(r =>
         (r.name && r.name.toLowerCase().includes(term)) ||
@@ -214,13 +212,11 @@ $('#year').textContent = new Date().getFullYear();
     render(list);
   }
 
-  // boot
   try {
     showSkeletons();
     repos = getCache() || await fetchAllRepos();
     setCache(repos);
 
-    // popula linguagens
     const langs = Array.from(new Set(repos.map(r => r.language).filter(Boolean))).sort();
     langs.forEach(l => {
       const opt = document.createElement('option');
@@ -229,10 +225,10 @@ $('#year').textContent = new Date().getFullYear();
 
     applyFilters();
   } catch (e) {
-    grid.innerHTML = ''; msg.textContent = e.message || 'Erro ao carregar repositórios.';
+    grid.innerHTML = '';
+    msg.textContent = e.message || 'Erro ao carregar repositórios.';
   }
 
-  // listeners
   q.addEventListener('input', applyFilters);
   langSel.addEventListener('change', applyFilters);
   sortSel.addEventListener('change', applyFilters);

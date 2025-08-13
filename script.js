@@ -108,9 +108,9 @@ form?.addEventListener('submit', (e) => {
 $('#year').textContent = new Date().getFullYear();
 
 /* ===================== Repositórios do GitHub ===================== */
-/* Troque GITHUB_USER pelo seu username (ex.: 'cyb3rxhkr') */
+/* Troque GITHUB_USER pelo seu username (ex.: 'cyberx') */
 (async function githubRepos() {
-  const USER = 'GITHUB_USER';
+  const USER = 'rodrigohenrik';
   const CACHE_KEY = `gh-repos:${USER}`;
   const CACHE_TTL = 1000 * 60 * 30; // 30 min
 
